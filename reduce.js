@@ -35,6 +35,11 @@ const isPresent = (string, target) => {
     }, false);
 };
 
+const isPresentAlt = (string, target) =>
+    string.toLowerCase().split("").reduce((result, letter) =>
+        result || letter === target, false
+    );
+
 const resultTrue = isPresent('abcd', 'b');
 const resultFalse = isPresent('efghi', 'a');
 const resultMultipleTrue = isPresent('efeghi', 'e');
